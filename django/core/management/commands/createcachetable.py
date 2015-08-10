@@ -28,7 +28,7 @@ class Command(BaseCommand):
 
     def handle(self, *tablenames, **options):
         db = options.get('database')
-        self.verbosity = int(options.get('verbosity'))
+        self.verbosity = int(options.get('verbosity', 0))
         dry_run = options.get('dry_run')
         if len(tablenames):
             # Legacy behavior, tablename specified as argument
